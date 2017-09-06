@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "charleshennessey.com.mvpbase"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+
+    //Facebook
+    //compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    //Firebase
+    //compile 'com.google.firebase:firebase-auth:11.0.4'
+    //compile 'com.google.firebase:firebase-database:11.0.4'
+    //compile 'com.google.firebase:firebase-storage:11.0.4'
+    //compile 'com.google.firebase:firebase-crash:11.0.4'
+    //Dagger 2
+    compile 'com.google.dagger:dagger:2.9'
+    annotationProcessor "com.google.dagger:dagger-compiler:2.9"
+    provided 'javax.annotation:jsr250-api:1.0'
+    //Butterknife
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    //Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    // JSON Parsing
+    compile 'com.google.code.gson:gson:2.6.1'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //FragNav
+    compile 'com.ncapdevi:frag-nav:2.0.2'
+    //Stripe
+    //compile 'com.stripe:stripe-android:4.1.1'
+    //Backend Endpoints
+    //compile 'com.google.code.findbugs:jsr305:2.0.1'
+    //Picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    // The Video library resides on jcenter
+    //compile 'com.twilio:video-android:1.2.1'
+
+    //Third Spinner (Dropdown)
+    //compile 'com.weiwangcn.betterspinner:library-material:1.1.0'
+    //FB Connection Lib
+    compile 'com.facebook.network.connectionclass:connectionclass:1.0.1'
+}
